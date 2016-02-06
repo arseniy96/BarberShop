@@ -19,7 +19,7 @@ body {
     color: #fffccc;
     position: absolute;
     width: 100%;
-    padding: 30px 10px;
+    padding: 15px 10px;
     bottom: 20px;
     left: 0;
 }
@@ -35,3 +35,5 @@ body {
 .form-inline .form-group {
     width: 15%;
 }
+
+a { color: cornflowerblue; }
