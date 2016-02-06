@@ -58,11 +58,17 @@ post '/feedback' do
   @email = params[:email]
   @mes = params[:mes]
 
-  @fil = File.open("./public/message.txt", "a")
-  @fil.write "Email: #{@email}, message: #{@mes}\n"
-  @fil.close
+  if @email == '' or @mes == ''
+    @error = 'Не все поля заполнены'
+    erb :feedback
+  else
 
-  erb "Спасибо за сообщение!"
+    @fil = File.open("./public/message.txt", "a")
+    @fil.write "Email: #{@email}, message: #{@mes}\n"
+    @fil.close
+
+    erb "Спасибо за сообщение!"
+  end
 end
 
 post '/entry' do
